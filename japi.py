@@ -1,4 +1,4 @@
-import urlib.request
+import urllib.request
 
 APIKEY = 'GN24I16UW66GC63Y'
 #example
@@ -18,9 +18,9 @@ def main():
     outFile = open('japi.out', 'w')
     #infinitely asks user for stock symbol until quit
     while 1:    
-        userInput = input("Please input stock symbol or 'quit' to exit").upper()
+        userInput = input("Please input stock symbol or 'quit' to exit: ").upper()
         if userInput != "QUIT":
-            currPrice = 'The current price of {} is:{}\n'.format(userInput, getStockData(userInput))
+            currPrice = 'The current price of {} is: {}\n'.format(userInput, getStockData(userInput))
             print(currPrice)
             outFile.write(currPrice)
         else:
