@@ -5,7 +5,7 @@ APIKEY = 'GN24I16UW66GC63Y'
 #URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=AAPL&apikey=GN24I16UW66GC63Y'
 
 def getStockData(symbol):
-    URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=' + symbol + '&apikey=GN24I16UW66GC63Y'    
+    URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=' + symbol + '&apikey=' + APIKEY   
     try:
         connection = urllib.request.urlopen(URL)
         responseString = connection.read().decode()
