@@ -1,12 +1,18 @@
 import urlib.request
 
 APIKEY = 'GN24I16UW66GC63Y'
-URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=AAPL&apikey=GN24I16UW66GC63Y'
+#example
+#URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=AAPL&apikey=GN24I16UW66GC63Y'
 
 def getStockData(symbol):
+    URL = 'https://www.alphavantage.co/query?function=BATCH_STOCK_QUOTES&symbols=' + symbol + '&apikey=GN24I16UW66GC63Y'    
     try:
-        print
-    return "not found"
+        connection = urllib.request.urlopen(URL)
+        responseString = connection.read().decode()
+
+        return responseString
+    except:    
+        return "not found"
 
 def main():
     outFile = open('japi.out', 'w')
