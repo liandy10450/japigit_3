@@ -9,8 +9,8 @@ def getStockData(symbol):
     try:
         connection = urllib.request.urlopen(URL)
         responseString = connection.read().decode()
-
-        return responseString
+        substrString = responseString.find('price')
+        return responseString[substrString+9:substrString+15]
     except:    
         return "not found"
 
